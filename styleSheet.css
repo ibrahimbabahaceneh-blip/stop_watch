@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.video-background{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+.video-background video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+audio::-webkit-media-controls-panel{
+    background-color: transparent;
+}
+#Myh1{
+    color: white;
+    font-family: sans-serif;
+    border: 3px solid;
+    border-radius: 2em;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    backdrop-filter: blur(2px);
+    margin-top: 20vh;
+}
+#container{
+    border: 4px solid white;
+    border-radius: 2em;
+    width: clamp(150px, 70% , 450px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    backdrop-filter: blur(2px);
+}
+#display{
+    color: white;
+    font-family: monospace;
+    font-size: 4em;
+    padding: 10px 10px 20px 10px;
+    margin-bottom: 20px;
+}
+#btnBox{
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+#btnBox button{
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    width: calc(30% - 10px);
+    height: 40px;
+    margin: 0 5px;
+    border-radius: 0.5em;
+    transition: background-color 200ms, transform 200ms;
+}
+#start{
+    background-color: transparent;
+    border: 2px solid white;
+    font-size: large;
+    font-family: sans-serif;
+}
+#stop{
+    font-size: large;
+    font-family: sans-serif;
+}
+#reset{
+    font-size: large;
+    font-family: sans-serif;
+}
+#btnBox button:hover{
+    background-color: rgba(128, 128, 128, 0.2);
+    transform: scale(1.03 , 1.03);
+}
+@media (max-width: 500px) {
+    #Myh1{
+        font-size: 10vw;
+        backdrop-filter: none;
+    }
+    #display{
+        font-size: 9vw;
+        margin: 0 10px 20xp 10px;
+    }
+    #container{
+        width: 80%;
+        backdrop-filter: none;
+    }
+    #btnBox{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "startbtn startbtn";
+        gap: 6px;
+    }
+    #btnBox button{
+        font-size: 4vw;
+        width: 100%;
+    }
+    #btnBox button:hover{
+        transform: scale(1, 1);
+    }
+    #start{
+        grid-area: startbtn;
+    }
+}
